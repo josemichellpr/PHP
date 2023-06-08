@@ -1,0 +1,21 @@
+body {
+    margin: 0; /*Para que no tenga márgenes indeseables y que se pueda manipular con
+    mayor sencillez los márgenes*/
+   
+  }
+  
+  .container{
+    margin: 0 auto; /*Esta línea es para centrar el "container" */
+    max-width: 200px;/*Es que no le puedes poner más de 400 px, porque el máximo es esa cifra. Entonces si le pones más de esa cifra, ya no se centra, se va para un lado o para el otro.*/
+    padding:1em 1.5em; /*Para un diseño responsivo*/
+    /*los 20 pixeles para
+     que,si se hace muy pequeña la página, 
+     no toque los bordes de la página y se 
+     vea más profesional*/
+     font-size: 1.25rem; /*Aquí le probé como recomendó el profe. 3 rem era demasiado, 2 igual, 1 muy pequeño
+     y 1.25 de maravilla. LO MÁS CHINGÓN DE TODO ES QUE SI HAGO MÁS PEQUEÑA LA VENTANA, NO TENGO QUE HACER "scroll" 
+     en la página (mover la barrita de la página de un lugar a otro). ESTAMOS APRENDIENDO DISEÑO RESPONSIVO*/   
+     background: teal;
+     
+  }
+
