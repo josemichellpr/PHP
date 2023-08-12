@@ -1,0 +1,176 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    
+}
+
+section{
+  margin-top: 0em;
+  border-top: solid 0.05em black;
+  padding-bottom: 2.5em;
+}
+
+
+.container{
+    margin: 0 auto;
+    max-width: 400px;
+    text-align: center;/*Sin esta línea no se estaba centrando el input, ni el diminuto botón. A pesar de las instrucciones de "margin" y "max-width" */    
+    padding-bottom: 3em;
+}
+
+.bolder {
+  font: bolder;
+  color:#707070;
+}
+
+button{ /*Son los botones en GENERAL*/
+    border: black solid 0.063em;
+    padding: 0.8em 1.6em;/*padding es para que se hagan más grandes los botones*/
+    font-weight: bold;
+    width: 70%; /*"width" con porcentaje para un diseño RESPONSIVO*/
+    /*El comando width (ancho) es para el 
+    botón solamente, no para el texto.*/
+    color: white;
+    border-radius: 1em;
+    background: red;
+    cursor: pointer; /*Este comando es para que, cuando el cursor pase por encima del botón, se cambia de una flecha a una manita como se ve en algunas páginas web*/
+  }
+
+  input{
+    text-align:center;
+  }
+
+  .calc1:hover{
+    background-color: #00FA9A; /*Este comando es para que, cuando el cursor pase por encima del botón (ME FALTA LA HIPOTENUSA), se cambia el color de fondo del botón y de fuente*/
+    color: black;
+  }
+
+
+
+  h1 {
+    font-family: 'Lora', serif;
+    font-weight: 400; /* Para agregar NEGRITAS*/
+    color: #143774;
+    font-size: 2rem; /*Dice el pro que 2rem, son 32 pix*/
+    margin: 0; /*Este sirve para que no haya demasiado espacio
+    entre h1 y el subtítulo*/
+}
+
+header {
+    text-align: center; 
+    background: #f8f8f8;
+    padding: 2em 0;
+}
+
+nav{
+    max-width: 1000px;
+    margin:auto;
+    font-size: 1.25rem;
+    margin-top: 1.25em;
+    
+}
+
+.menu-horizontal{
+    list-style:none;
+    display:flex;
+    justify-content: space-around;
+}
+
+.menu-horizontal >li > a{
+    display:block;
+    padding:0.93em 1.25em;
+    color:#143774; /*Este es el color de las letras del navegador. Donde está "Tienda", "Docencia", etc.*/
+    text-decoration: none;
+}
+
+.menu-horizontal > li:hover{ /*Si le pongo :focus no sale nada. No cambia nada*/
+    background-color: red;
+}
+
+.menu-vertical{
+    position:absolute;
+    display:none;
+    list-style:none;
+    width: 200px;
+    background-color: #707070;
+}
+
+.menu-horizontal li:hover .menu-vertical{
+    display:block;
+}
+
+.menu-vertical li a{
+    display:block;
+    color:white;/*Es para cambiar el color de el menu vertical, el que se "desprende" cuando pasa el cursor*/   
+    text-decoration: none; /*Es para quitar el subrayado a los enlaces. Solo aquí funciona. En las "otros" menu-vertical no acata el comando. Talvez porque aqui está el a de anchor*/
+}
+
+ /*Comienza el footer*/
+ footer{
+  background-color:#f8f8f8;/*Es el mismo color que el de el navbar*/
+}
+
+.container_footer{
+  max-width: 980px;
+  margin: 0 auto;
+  padding-bottom: 2em;/*Con este comando se reduce el tamaño del espacio de abajo de las columnas del footer*/
+  font-size: 1.0rem; /*Aquí le probé como recomendó el profe. 3 rem era demasiado, 2 igual, 1 muy pequeño
+   y 1.25 de maravilla. LO MÁS CHINGÓN DE TODO ES QUE SI HAGO MÁS PEQUEÑA LA VENTANA, NO TENGO QUE HACER "scroll" 
+   en la página (mover la barrita de la página de un lugar a otro). ESTAMOS APRENDIENDO DISEÑO RESPONSIVO*/
+   /*background-color: red; Con esta línea de código, puedo ver QUE abarca el .column_footer y así pude resolver (al menos por ahora, el detalle de que no se centraba bien las columnas del footer (lo de JMPR se iba como para la izquierda)) */
+   
+}
+
+.column_footer{
+  display: flex;
+  /*Este comando es para las columnas como el mismo nombre del comando lo expresa*/
+  margin-right: 1em;
+  margin-left: 1em;
+  justify-content: space-between;
+  /*background-color: green;Con esta línea de código, puedo ver QUE abarca el .column_footer y así pude resolver (al menos por ahora, el detalle de que no se centraba bien las columnas del footer (lo de JMPR se iba como para la izquierda)) */
+  
+}
+
+.col_footer{
+  text-align: justify;
+  width: 21%;
+}
+
+.ultimate_footer{
+  font-weight: bolder;
+  font-size:1.5rem;
+}
+/*Termina el footer*/
+
+/*COMIENZA NAVBAR QUE SE APILA CUANDO LA PÁGINA SE HACE PEQUEÑA*/
+@media (max-width: 675px) {/*LOS @media SON LOS QUE HACEN LA MAGIA*/
+  .menu-horizontal {
+      flex-direction: column;/*Cuando el profe nos pidío que lo intentaramos, SI puse esta línea de código*/
+     /* max-width: 300px; /*Esta línea lo que hace es límitar el ancho del hover que aparece cuando se hace clic en una opción, de las secciones de la página web*/
+      margin-bottom: 1.25em;
+      transform: translateX(-5.5%);/*ESTA LÍNEA DE CÓDIGO ES UNA PASADA. LOGRO RESOLVER EL DETALLE DE QUE LAS DIFERENTES SECCIONES DE LA PÁGINA WEB APILADAS, SE VEIAN UN POQUITO HACÍA LA DERECHA. VOALA!!!*/
+  }
+  
+  /*AQUI SE LE DA EL DISEÑO RESPONSIVO A LAS COLUMNAS DE L FOOTER, POR SI EL USUARIO MIRA LA PÁGINA EN TELÉFONO*/
+   .container_footer{
+      font-size: 0.4rem; 
+  }
+ .ultimate_footer{
+     padding-left:1.5em;
+     font-size:0.7rem;
+ }
+ 
+ /*AQUI SE LE DA EL DISEÑO RESPONSIVO A LAS COLUMNAS DE L FOOTER, POR SI EL USUARIO MIRA LA PÁGINA EN TELÉFONO*/
+}
+
+@media (max-width: 500px) {/*LOS @media SON LOS QUE HACEN LA MAGIA. NO SÉ PORQUE EL PROFESOR PUSO ESTOS HASTA AQUÍ. AHORITA VOY A HACER LA PRUEBA A VER SI FUNCIONAN TODOS JUNTOS*/
+  nav ul {
+      flex-direction: column; /*ESTA LÍNEA LO QUE HACE ES "APILAR" LOS ENLACES. Sin esta línea estarían todos en una solo línea y se vería horrible*/
+      
+  }
+  
+  nav li {
+      margin: 0.5em 0; /*Esta línea lo que hace es dar espacio hacia arriba y abajo en los enlaces*/
+  }
+}
+/*TERMINA NAVBAR QUE SE APILA CUANDO LA PÁGINA SE HACE PEQUEÑA*/
